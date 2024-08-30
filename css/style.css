@@ -1,0 +1,340 @@
+/* common */
+
+@font-face {
+  font-family: 'GmarketSansMedium';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'GmarketSansMedium';
+}
+
+img{
+  width: 40px;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* main */
+main {
+  width: 100%;
+  height: 100vh;
+  background-color: #212c28;
+  display: flex;
+}
+
+main header {
+  width: 20%;
+  height: 100%;
+  padding: 10vh 5vw;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+  /* 세로축은 상단 하단 양끝으로 콘텐츠를 배치 */
+  position: relative;
+  z-index: 3;
+}
+
+main header h1 {
+  color: #fb6334;
+  font: normal 1vw/1 'GmarketSansMedium' ;
+}
+
+main header .about{
+  cursor: pointer;
+}
+
+main header address {
+  font: normal 13px/1.56 'GmarketSansMedium';
+  color: #fb6334;
+}
+
+main nav {
+  position: absolute;
+  top: 10vh;
+  right: 5vw;
+  z-index: 3;
+}
+
+main nav ul {
+  display: flex;
+}
+
+main nav ul li {
+  font-size: 18px;
+  color: #efa24a;
+  margin-right: 2px;
+}
+
+main nav ul li p{
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+/* section */
+main section {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  padding-top: 15vh;
+  position: relative;
+  z-index: 1;
+}
+
+/* article */
+main section article {
+  opacity: 0.6;
+  flex: 1;
+  /* 모든 article 요소의 너비를 동등하게 지정 */
+  position: relative;
+  cursor: pointer;
+  z-index: 1;
+  padding: 70px 40px 100px;
+  transition: opacity 1s, flex 1s;
+}
+
+main section article::before {
+  content: "";
+  display: block;
+  width: 80%;
+  height: 95%;
+  position: absolute;
+  background-color: #efa24a;
+  top: 0px;
+  left: -200px;
+  opacity: 0;
+  transition: 1s;
+}
+
+main section article .inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+  /* txt와 figure 요소를 위 아래 끝에 배치 */
+}
+
+main section article .inner .txt {
+  width: 100%;
+  transition: 0.5s;
+}
+
+main section article .inner .txt h2 {
+  font: normal 2vw/1 'GmarketSansMedium';
+  color: #efa24a;
+  margin-bottom: 40px;
+  padding-top: 70px;
+  transition: 1s;
+}
+
+main section article .inner .txt h2::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  background-color: #efa24a;
+  margin-top: 20px;
+  transition: 1.5s;
+}
+
+main section article .inner .txt .info {
+  font: 14px/1.4 'GmarketSansMedium';
+  color: #efa24a;
+
+}
+
+main section article .inner .txt .info ul{
+  padding-top: 10px;
+}
+
+main section article .inner .txt .info ul li h4{
+  padding: 5px;
+  font-weight: 200;
+}
+
+main section article .inner .txt .info ul li p{
+  padding: 5px;
+  font-size: 12px;
+  font-weight: 50;
+}
+
+main section article .inner .txt .info ul li img{
+  padding: 5px;
+}
+
+/* figure */
+main section article .inner figure {
+  width: 100%;
+  height: 15vh;
+  background-color: #777;
+  overflow: hidden;
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);
+  transform-origin: left center;
+  transition: 1s;
+  filter: saturate(10%);
+}
+
+
+main section article .inner figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.1);
+}
+
+main section article:hover {
+  flex: 1.5;
+  opacity: 1;
+  z-index: 2;
+}
+
+main section article:hover::before {
+  /* article 요소에 호버시 ::before변경 구문 */
+  left: 0px;
+  opacity: 1;
+}
+
+main section article:hover .inner .txt {
+  width: 75%;
+}
+
+main section article:hover .inner .txt h2 {
+  font-size: 5vw;
+  padding-top: 0px;
+  color: #212c28;
+}
+
+main section article:hover .inner .txt .info {
+
+  color: #212c28;
+}
+
+main section article:hover .inner .txt h2::after {
+  width: 120px;
+  height: 2px;
+  background-color: #fb6334;
+}
+
+main section article:hover .inner figure {
+  height: 25vh;
+  filter: saturate(120%);
+  transform: translateY(3vh);
+}
+
+/* aside */
+main aside {
+  width: 100%;
+  height: 100vh;
+  background-color: #efa24a;
+  position: absolute;
+  top: 0px;
+  left: -100%;
+  opacity: 0;
+  z-index: 2;
+  padding: 20vh 7vw 14vh 20vw;
+  display: flex;
+  justify-content: space-between;
+  transition: 1s;
+}
+
+main aside.on {
+  /* class에 on이 붙으면 */
+  opacity: 1;
+  left: 0%;
+}
+
+main aside .txt {
+  width: 25%;
+  height: 100%;
+}
+
+main aside .txt span {
+  color: #212c28;
+  cursor: pointer;
+  font-size: 2vw;
+}
+
+main aside .txt span:hover{
+  color: #fb6334;
+}
+
+main aside .txt h2 {
+  font: normal 6vw/1 'GmarketSansMedium';
+  color: #212c28;
+  margin-bottom: 20px;
+}
+
+main aside .txt .info {
+  color: #212c28;
+  margin-bottom: 50px;
+}
+
+main aside .txt .info h3{
+  font-size: 1.3vw;
+  margin-top: 50px;
+}
+
+main aside .txt .info ul{
+  margin-top: 30px;
+}
+
+main aside .txt .info ul li{
+  padding: 10px;
+}
+
+main aside .txt .info ul li p{
+  padding-top: 5px;
+}
+
+main aside .txt .info ul li img{
+  padding-top: 20px;
+}
+
+main aside figure {
+  width: 72%;
+  height: 100%;
+}
+
+main aside figure video {
+  width: 100%;
+  object-fit: cover;
+  margin-top: 20%;
+}
+
+main .popup{
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0px;
+  left: -100%;
+  opacity: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  transition: 1s;
+
+}
+
+main .on {
+  /* class에 on이 붙으면 */
+  opacity: 1;
+  left: 0%;
+  cursor: pointer;
+}
