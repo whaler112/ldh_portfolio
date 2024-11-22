@@ -27,15 +27,15 @@ for(let el of items){
     window.open('https://youtu.be/nXL9rxg1ejQ', '_blank' )
   })
    $('.vid2').click(function(){
-    window.open('https://youtu.be/DFhQx7DyKwk', '_blank' )
+    window.open('https://youtu.be/7Ct6PR8IJqE?si=RxMbB7hqfgsPEtCM', '_blank' )
   })
    $('.vid3').click(function(){
     window.open('https://youtu.be/CluDCHl0-VM', '_blank' )
   })
    $('.vid4').click(function(){
-    window.open('https://youtu.be/vMPxX_OfaNA', '_blank' )
+    window.open('https://youtu.be/DFhQx7DyKwk', '_blank' )
   })
    $('.vid5').click(function(){
-    window.open('https://youtu.be/iVLMNDg5AwY', '_blank' )
+    window.open('https://youtube.com/shorts/EGqqyzs35cs?si=OGOyCGqFv_qtJVjB', '_blank' )
   })
 }
